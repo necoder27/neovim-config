@@ -31,6 +31,17 @@ return {
         end
       }
 
+      lspconfig.volar.setup {
+	filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+  	init_options = {
+   	  vue = {
+	    hybridMode = false,
+          },
+        },
+      }
+
+      require'lspconfig'.cssls.setup{}
+
       -- Global diagnostic configuration
       vim.diagnostic.config({
         virtual_text = true,
@@ -48,7 +59,7 @@ return {
     cmd = "Mason",
     config = function()
       require("mason").setup({
-      	ensure_installed = {"pyright", "vue-language-server",},  
+      	ensure_installed = {"pyright", "vue-language-server", "css-lsp"},  
       })
     end
   }
