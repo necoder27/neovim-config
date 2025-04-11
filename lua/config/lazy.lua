@@ -31,6 +31,8 @@ vim.opt.cursorline = true
 vim.opt.clipboard:append("unnamedplus")
 
 -- Oil Keymaps
+vim.keymap.set("n", "<leader>ls", ":Oil<CR>", { desc = "[l]i[s]t Files and Directories" })
+
 vim.keymap.set("n", "<leader>pc", function()
   require("oil").open("~/.config/nvim/lua/plugins")
 end, { desc = "Open [P]lugins [C]onfig" })
