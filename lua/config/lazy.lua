@@ -29,6 +29,9 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.cursorline = true
 vim.opt.clipboard:append("unnamedplus")
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
 
 -- Oil Keymaps
 vim.keymap.set("n", "<leader>ls", ":Oil<CR>", { desc = "[l]i[s]t Files and Directories" })
