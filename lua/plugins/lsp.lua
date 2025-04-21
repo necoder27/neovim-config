@@ -42,6 +42,13 @@ return {
 
       require'lspconfig'.cssls.setup{}
 
+      lspconfig.tailwindcss.setup {
+        cmd = { "tailwindcss-language-server", "--stdio" },
+        filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte", "astro" },
+        root_dir = lspconfig.util.root_pattern("tailwind.config.js", "tailwind.config.cjs", "tailwind.config.ts", "postcss.config.js", "package.json"),
+        settings = {},
+      }
+
       -- Global diagnostic configuration
       vim.diagnostic.config({
         virtual_text = true,
@@ -59,7 +66,7 @@ return {
     cmd = "Mason",
     config = function()
       require("mason").setup({
-      	ensure_installed = {"pyright", "vue-language-server", "css-lsp"},  
+      	ensure_installed = {"pyright", "vue-language-server", "css-lsp", "tailwindcss-language-server"},  
       })
     end
   }
